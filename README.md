@@ -1,5 +1,5 @@
 # clark
-consul cluster using terraform
+Consul cluster using terraform for Clark
 
 Project detail
 -------------
