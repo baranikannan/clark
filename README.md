@@ -26,13 +26,13 @@ Solution
 --------
 
 1. Enable private DNS.
-    Created a VPC with cutom DHCP options set and a Lambda to add and remove record set in Rote53.
+    Created a VPC with custom DHCP options set and a Lambda to add and remove record set in Route53.
 2. Created a packer image with Consul binaries deployed.
 3. A Consul cluster was created with 3 nodes where nodes will identify each other using EC2 instance tags.
-4. Since the instances were registerd in Route53 through Lambda DNS resolution is happening fine.
+4. Since the instances were registered in Route53 through Lambda DNS resolution is happening fine.
 5. Backup script was implemented to take backup in Consul Leader node and uploaded to S3 bucket.
 6. S3 bucket has a policy implemented for object recycle.
-7. Deployment auto mation can be done using Bamboo or Jenkin as a usual terraform script.
+7. Deployment automation can be done using Bamboo or Jenkin as a usual terraform script.
 
 Pending / Issues identified
 ---------------------------
