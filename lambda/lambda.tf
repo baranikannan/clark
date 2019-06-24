@@ -103,6 +103,8 @@ resource "aws_lambda_function" "ec2state" {
       variables = {
         ENVIRONMENT = "${var.grp}"
         NAME        = "${var.project}-ec2state"
+        hostedZoneId = "${data.aws_route53_zone.internal.zone_id}"
+        Domain_Name  = "${var.zone}"
       }
     }
   }

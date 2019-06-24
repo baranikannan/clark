@@ -1,9 +1,10 @@
 import boto3
 import hashlib
 import json
+import os
 
-hostedZoneId = "Z011184524Q3T52VVN9I8"
-Domain_Name = "clark.test"
+#hostedZoneId = "Z011184524Q3T52VVN9I8"
+#Domain_Name = "clark.test"
 client = boto3.client('route53')
 ec2 = boto3.resource('ec2')
 
@@ -14,6 +15,8 @@ def search(dicts, search_for):
     return None
 
 def lambda_handler(event, context):
+    hostedZoneId = os.environ['hostedZoneId']
+    Domain_Name  = os.environ['Domain_Name']
     instance_id = event['detail']['instance-id']
     instance_state = event['detail']['state']
     instance = ec2.Instance(instance_id)

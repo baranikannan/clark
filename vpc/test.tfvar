@@ -3,7 +3,6 @@
 # Values for varibles and subnets in test environment
 #------------------------------------------------------------------------------
 
-
 account= "test" 
 env="test"
 grp="test"
