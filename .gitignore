@@ -1,0 +1,7 @@
+*.backup
+consul/.terraform
+lambda/.terraform
+vpc/.terraform
+consul/terraform.tfstate.d
+lambda/terraform.tfstate.d
+vpc/terraform.tfstate.d

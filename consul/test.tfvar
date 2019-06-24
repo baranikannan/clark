@@ -1,0 +1,18 @@
+#------------------------------------------------------------------------------
+# Values for varibles in test environment
+#------------------------------------------------------------------------------
+
+account= "test" 
+
+key_name 				= "forclark"
+env      				= "test"
+
+s3-bucket				= "consul-test"
+
+stackMaxSize			= "6"
+stackMinSize			= "3"
+stackDesiredSize		= "3"
+
+instance_type			= "t2.micro"
+
+

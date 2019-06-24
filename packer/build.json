@@ -1,0 +1,51 @@
+{
+  "variables": {
+    "aws_access_key": "",
+    "aws_secret_key": "",
+    "aws_region"    :  "ap-southeast-1",
+    "project_name": "consul",
+    "version_number": "0.0.2"    
+  },
+
+  "builders": [{
+    "type": "amazon-ebs",
+    "access_key": "{{user `aws_access_key`}}",
+    "secret_key": "{{user `aws_secret_key`}}",
+    "region": "{{user `aws_region`}}",
+    "source_ami_filter": {
+      "filters": {
+        "name": "amzn2-ami-hvm*-x86_64-gp2",
+        "virtualization-type": "hvm",
+        "root-device-type": "ebs"
+      },
+      "owners": ["137112412989"],
+      "most_recent": true
+    },
+
+    "instance_type": "t2.micro",
+    "communicator": "ssh",
+    "ssh_username": "ec2-user",
+    "ami_name": "{{ user `project_name` }}-{{ user `version_number` }}",
+    "tags": {
+      "Name": "Packer Base - consul"
+    },
+
+    "subnet_id": "",
+    "ami_users": "",
+    "associate_public_ip_address": "true"  
+  }],
+
+  "provisioners": [{
+    "type": "salt-masterless",
+    "local_state_tree": "salt",
+    "local_pillar_roots": "pillar"
+  },
+  {
+    "type": "shell",
+    "inline": [
+      "sudo rm -rf salt",
+      "sudo rm -rf pillar"
+    ]
+  }]
+
+}
