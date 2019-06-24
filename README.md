@@ -39,4 +39,4 @@ Pending / Issues identified
 
 1. When one node gets terminated the cluster is recovering fine but when two nodes gets terminated the cluster Leader election fails
 and cluster is failing.
-2. Log rotation and upload needs to ne implemented.
+2. Log rotation and upload needs to be implemented.
