@@ -1,6 +1,6 @@
 import boto3, json, re
  
-client = boto3.client('route53', aws_access_key_id="AKIA5YFLHLRFWC3JWGPM", aws_secret_access_key="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")
+client = boto3.client('route53', aws_access_key_id="", aws_secret_access_key="")
 hostedZoneId = "Z03176201EOGIVF2UQ1DV"
  
 instance_id = "i-02c0ebaf7306fdecd"
